@@ -79,7 +79,7 @@ nav {
 
 .hero-content {
   max-width: 1200px;
-  margin: 0 auto 0 20px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -98,7 +98,7 @@ nav {
   font-size: 56px;
   line-height: 1.1;
   font-weight: 760;
-  text-align: left;
+
 }
 
 .hero h1 span {
@@ -166,6 +166,11 @@ nav {
   background: var(--white);
 }
 
+.technology-content {
+  max-width: 1216px;
+  margin: 0 auto;
+}
+
 .technologies h2 {
   margin: 0 0 10px;
   text-align: left;
@@ -188,8 +193,6 @@ nav {
 
 .technology-layout {
   width: 100%;
-  max-width: 1216px;
-  margin: 0 auto;
   display: flex;
   align-items: flex-start;
   gap: 24px;

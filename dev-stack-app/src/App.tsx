@@ -2,6 +2,9 @@ import logo from './assets/logo-text.png'
 import bannerImage from './assets/banner-stack.png'
 import technologiesData from './data/technologies.json'
 import type { Technology } from './types'
+import { useState } from 'react'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
 
 
@@ -10,6 +13,7 @@ import './App.css'
 function App() {
   const technologies: Technology[] = technologiesData
 
+  const [stack, setStack] = useState<Technology[]>([])
   return (
     <>
       <header className="navbar">
@@ -81,73 +85,76 @@ function App() {
 
         {/* Technologies Section */}
         <section id="technologies" className="technologies">
-          <h2>
-            Explore the <span>Technologies</span>
-          </h2>
+          <div className="technology-content">
+            <h2>
+              Explore the <span>Technologies</span>
+            </h2>
 
-          <p className="technologies-description">
-            Pick one technology per category to build your ideal stack.
-          </p>
+            <p className="technologies-description">
+              Pick one technology per category to build your ideal stack.
+            </p>
 
-          <div className="technology-layout">
-            <div className="technology-grid">
-              {technologies.map((technology) => (
-                <div className="technology-card" key={technology.id}>
-                  <img src={technology.icon} alt={technology.name} />
+            <div className="technology-layout">
+              <div className="technology-grid">
+                {technologies.map((technology) => (
+                  <div className="technology-card" key={technology.id}>
+                    <img src={technology.icon} alt={technology.name} />
 
-                  <span
-                    className="technology-badge"
-                    style={{
-                      backgroundColor: technology.badgeBg,
-                      color: technology.badgeColor,
-                    }}
-                  >
-                    {technology.badge}
-                  </span>
+                    <span
+                      className="technology-badge"
+                      style={{
+                        backgroundColor: technology.badgeBg,
+                        color: technology.badgeColor,
+                      }}
+                    >
+                      {technology.badge}
+                    </span>
 
-                  <div className="card-content">
-                    <h3>{technology.name}</h3>
+                    <div className="card-content">
+                      <h3>{technology.name}</h3>
 
-                    <p className="technology-description">
-                      {technology.description}
-                    </p>
+                      <p className="technology-description">
+                        {technology.description}
+                      </p>
+                    </div>
+
+                    <div className="card-meta">
+                      <span className="category-pill">
+                        {technology.category}
+                      </span>
+
+                      <span className="difficulty">
+                        {technology.difficulty}
+                      </span>
+
+                      <span className="rating">
+                        <span className="rating-star">★</span>
+                        {technology.rating}
+                      </span>
+                    </div>
+
+                    <button type="button" className="add-stack-button">
+                      Add to Stack
+                    </button>
                   </div>
+                ))}
+              </div>
 
-                  <div className="card-meta">
-                    <span className="category-pill">
-                      {technology.category}
-                    </span>
-
-                    <span className="difficulty">
-                      {technology.difficulty}
-                    </span>
-
-                    <span className="rating">
-                      <span className="rating-star">★</span>
-                      {technology.rating}
-                    </span>
-                  </div>
-
-                  <button type="button" className="add-stack-button">
-                    Add to Stack
-                  </button>
+              <aside className="stack-panel">
+                <div className="stack-header">
+                  <h3>Your Stack</h3>
+                  <span>No technologies selected yet.</span>
                 </div>
-              ))}
+
+                <div className="stack-empty">
+                  <p>Your stack is empty.</p>
+                </div>
+              </aside>
             </div>
-
-            <aside className="stack-panel">
-              <div className="stack-header">
-                <h3>Your Stack</h3>
-                <span>No technologies selected yet.</span>
-              </div>
-
-              <div className="stack-empty">
-                <p>Your stack is empty.</p>
-              </div>
-            </aside>
           </div>
         </section>
       </main>
+      <ToastContainer position="top-right" />
     </>
   )
 }
