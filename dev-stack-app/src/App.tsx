@@ -2,11 +2,10 @@ import logo from './assets/logo-text.png'
 import bannerImage from './assets/banner-stack.png'
 import technologiesData from './data/technologies.json'
 import type { Technology } from './types'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
-
 
 
 
@@ -14,6 +13,15 @@ function App() {
   const technologies: Technology[] = technologiesData
 
   const [stack, setStack] = useState<Technology[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 800)
+    
+    return () => clearTimeout(timer)
+  }, [])
 
   const addToStack = (technology: Technology) => {
     const alreadyAdded = stack.some((item) => item.id === technology.id)
@@ -127,57 +135,64 @@ function App() {
             </p>
 
             <div className="technology-layout">
-              <div className="technology-grid">
-                {technologies.map((technology) => (
-                  <div className="technology-card" key={technology.id}>
-                    <img src={technology.icon} alt={technology.name} />
 
-                    <span
-                      className="technology-badge"
-                      style={{
-                        backgroundColor: technology.badgeBg,
-                        color: technology.badgeColor,
-                      }}
-                    >
-                      {technology.badge}
-                    </span>
+              {loading ? (
+                <div className="loading-message">
+                  Loading technologies...
+                </div>
+              ) : (
+                <div className="technology-grid">
+                  {technologies.map((technology) => (
+                    <div className="technology-card" key={technology.id}>
+                      <img src={technology.icon} alt={technology.name} />
 
-                    <div className="card-content">
-                      <h3>{technology.name}</h3>
+                      <span
+                        className="technology-badge"
+                        style={{
+                          backgroundColor: technology.badgeBg,
+                          color: technology.badgeColor,
+                        }}
+                      >
+                        {technology.badge}
+                      </span>
 
-                      <p className="technology-description">
-                        {technology.description}
-                      </p>
+                      <div className="card-content">
+                        <h3>{technology.name}</h3>
+
+                        <p className="technology-description">
+                          {technology.description}
+                        </p>
+                      </div>
+
+                      <div className="card-meta">
+                        <span className="category-pill">
+                          {technology.category}
+                        </span>
+
+                        <span className="difficulty">
+                          {technology.difficulty}
+                        </span>
+
+                        <span className="rating">
+                          <span className="rating-star">★</span>
+                          {technology.rating}
+                        </span>
+                      </div>
+
+                      <button
+                        type="button"
+                        className="add-stack-button"
+                        onClick={() => addToStack(technology)}
+                        disabled={stack.some((item) => item.id === technology.id)}
+                      >
+                        {stack.some((item) => item.id === technology.id)
+                          ? '✓ Added to Stack'
+                          : 'Add to Stack'}
+                      </button>
                     </div>
-
-                    <div className="card-meta">
-                      <span className="category-pill">
-                        {technology.category}
-                      </span>
-
-                      <span className="difficulty">
-                        {technology.difficulty}
-                      </span>
-
-                      <span className="rating">
-                        <span className="rating-star">★</span>
-                        {technology.rating}
-                      </span>
-                    </div>
-
-                    <button
-                      type="button"
-                      className="add-stack-button"
-                      onClick={() => addToStack(technology)}
-                      disabled={stack.some((item) => item.id === technology.id)}
-                    >
-                      {stack.some((item) => item.id === technology.id)
-                        ? '✓ Added to Stack'
-                        : 'Add to Stack'}
-                    </button>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
 
               <aside className="stack-panel">
 
