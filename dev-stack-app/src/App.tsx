@@ -14,12 +14,13 @@ function App() {
 
   const [stack, setStack] = useState<Technology[]>([])
   const [loading, setLoading] = useState(true)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false)
     }, 800)
-    
+
     return () => clearTimeout(timer)
   }, [])
 
@@ -64,7 +65,7 @@ function App() {
             </a>
           </div>
 
-          <div className="nav-links">
+          <div className={`nav-links ${menuOpen ? 'menu-open' : ''}`}>
             <a href="#home" className="active">
               Home
             </a>
@@ -73,6 +74,15 @@ function App() {
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
           </div>
+
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-label="Toggle navigation menu"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            ☰
+          </button>
 
           <div className="nav-actions">
             <button type="button" className="sign-in">

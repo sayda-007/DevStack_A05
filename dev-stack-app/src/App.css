@@ -539,3 +539,179 @@ nav {
   color: var(--slate-gray);
   font-size: 16px;
 }
+
+.menu-toggle {
+  display: none;
+}
+
+
+
+@media (max-width: 768px) {
+
+  /* Mobile Navigation */
+.navbar nav {
+  padding: 16px 20px;
+  position: relative;
+  align-items: center;
+}
+
+.nav-links {
+  display: none;
+}
+
+.nav-links.menu-open {
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  gap: 0;
+  background: var(--white);
+  border-top: 1px solid var(--light-bg);
+  border-bottom: 1px solid var(--light-bg);
+  z-index: 1001;
+}
+
+.nav-links.menu-open a {
+  padding: 14px 20px;
+}
+
+.nav-actions {
+  display: none;
+}
+
+.menu-toggle {
+  display: block;
+  border: none;
+  background: transparent;
+  color: var(--slate-dark);
+  font-size: 24px;
+  line-height: 1;
+  padding: 4px;
+  cursor: pointer;
+}
+
+/* Mobile Hero Section */
+.hero {
+  padding: 30px 20px 50px;
+}
+
+.hero-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.hero-text {
+  width: 100%;
+}
+
+.hero h1 {
+  max-width: 100%;
+  font-size: 38px;
+  text-align: center;
+}
+
+.hero-description {
+  max-width: 100%;
+  font-size: 16px;
+  text-align: center;
+}
+
+.hero-actions {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  width: 100%;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 420px;
+}
+
+
+/* Mobile Technologies Section */
+.technologies {
+  padding: 30px 20px 50px;
+}
+
+.technology-content {
+  width: 100%;
+  max-width: 100%;
+}
+
+.technologies h2 {
+  font-size: 32px;
+  text-align: center;
+}
+
+.technologies-description {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.technology-layout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.technology-grid {
+  width: 100%;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.technology-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.stack-panel {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mobile Footer Section */
+.footer {
+  padding: 40px 20px 0;
+}
+
+.footer-content {
+  width: 100%;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer-brand {
+  max-width: 100%;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.footer-column {
+  min-width: 0;
+}
+
+.footer-bottom {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-bottom-links {
+  gap: 16px;
+}
+
+}
