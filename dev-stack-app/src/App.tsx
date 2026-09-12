@@ -1,9 +1,9 @@
 import logo from './assets/logo-text.png'
 import bannerImage from './assets/banner-stack.png'
 import technologiesData from './data/technologies.json'
-import type { Technology } from './types'
-import { useState } from 'react'
-import { ToastContainer } from 'react-toastify'
+import type {Technology} from './types'
+import {useState} from 'react'
+import {ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
 
@@ -14,6 +14,13 @@ function App() {
   const technologies: Technology[] = technologiesData
 
   const [stack, setStack] = useState<Technology[]>([])
+
+  const addToStack = (technology: Technology) => {
+    setStack([...stack, technology])
+    toast.success(`${technology.name} added to your stack!`)
+  }
+
+
   return (
     <>
       <header className="navbar">
@@ -133,7 +140,11 @@ function App() {
                       </span>
                     </div>
 
-                    <button type="button" className="add-stack-button">
+                    <button
+                      type="button"
+                      className="add-stack-button"
+                      onClick={() => addToStack(technology)}
+                    >
                       Add to Stack
                     </button>
                   </div>
@@ -154,7 +165,7 @@ function App() {
           </div>
         </section>
       </main>
-      <ToastContainer position="top-right" />
+      <ToastContainer position="bottom-right" />
     </>
   )
 }

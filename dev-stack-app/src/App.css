@@ -331,6 +331,7 @@ nav {
   color: #475569;
   font-size: 12px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .rating {
