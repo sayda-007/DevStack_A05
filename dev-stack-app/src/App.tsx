@@ -44,7 +44,7 @@ function App() {
 
       <main>
 
-        {/* Home Section */}
+        {/* Hero Section */}
         <section id="home" className="hero">
           <div className="hero-content">
             <div className="hero-text">
@@ -80,53 +80,71 @@ function App() {
 
 
         {/* Technologies Section */}
-        {/* Technologies Section */}
         <section id="technologies" className="technologies">
-          <h2>Explore Technologies</h2>
+          <h2>
+            Explore the <span>Technologies</span>
+          </h2>
 
-          <div className="technology-grid">
-            {technologies.map((technology) => (
-              <div className="technology-card" key={technology.id}>
-                <img src={technology.icon} alt={technology.name} />
+          <p className="technologies-description">
+            Pick one technology per category to build your ideal stack.
+          </p>
 
-                <span
-                  className="technology-badge"
-                  style={{
-                    backgroundColor: technology.badgeBg,
-                    color: technology.badgeColor,
-                  }}
-                >
-                  {technology.badge}
-                </span>
+          <div className="technology-layout">
+            <div className="technology-grid">
+              {technologies.map((technology) => (
+                <div className="technology-card" key={technology.id}>
+                  <img src={technology.icon} alt={technology.name} />
 
-                <div className="card-content">
-                  <h3>{technology.name}</h3>
+                  <span
+                    className="technology-badge"
+                    style={{
+                      backgroundColor: technology.badgeBg,
+                      color: technology.badgeColor,
+                    }}
+                  >
+                    {technology.badge}
+                  </span>
 
-                  <p className="technology-description">
-                    {technology.description}
-                  </p>
+                  <div className="card-content">
+                    <h3>{technology.name}</h3>
+
+                    <p className="technology-description">
+                      {technology.description}
+                    </p>
+                  </div>
+
+                  <div className="card-meta">
+                    <span className="category-pill">
+                      {technology.category}
+                    </span>
+
+                    <span className="difficulty">
+                      {technology.difficulty}
+                    </span>
+
+                    <span className="rating">
+                      <span className="rating-star">★</span>
+                      {technology.rating}
+                    </span>
+                  </div>
+
+                  <button type="button" className="add-stack-button">
+                    Add to Stack
+                  </button>
                 </div>
+              ))}
+            </div>
 
-                <div className="card-meta">
-                  <span className="category-pill">
-                    {technology.category}
-                  </span>
-
-                  <span className="difficulty">
-                    {technology.difficulty}
-                  </span>
-
-                  <span className="rating">
-                    <span className="rating-star">★</span>
-                    {technology.rating}
-                  </span>
-                </div>
-
-                <button type="button" className="add-stack-button">
-                  Add to Stack
-                </button>
+            <aside className="stack-panel">
+              <div className="stack-header">
+                <h3>Your Stack</h3>
+                <span>No technologies selected yet.</span>
               </div>
-            ))}
+
+              <div className="stack-empty">
+                <p>Your stack is empty.</p>
+              </div>
+            </aside>
           </div>
         </section>
       </main>
