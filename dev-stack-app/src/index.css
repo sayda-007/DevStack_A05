@@ -10,12 +10,13 @@
   --slate-medium: #475569;
   --slate-gray: #374151;
   --pink-deep: #db2777;
+  --orange: #ff5722;
 
   --brand-gradient: linear-gradient(
     90deg,
-    #ff5722 0%,
-    #d81b7e 50%,
-    #d81b7e 100%
+    #FF5722 0%,
+    #D81B7E 50%,
+    #7C3AED 100%
   );
 
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;

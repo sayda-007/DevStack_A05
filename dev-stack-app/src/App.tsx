@@ -235,6 +235,64 @@ function App() {
         </section>
       </main>
 
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-brand">
+            <img src={logo} alt="Dev Stack" />
+
+            <p>
+              Curated tools, technologies, and resources for developers
+              building modern software.
+            </p>
+
+            <div className="footer-socials">
+              <a href="#" aria-label="GitHub">
+                GitHub
+              </a>
+
+              <a href="#" aria-label="Twitter">
+                Twitter
+              </a>
+
+              <a href="#" aria-label="LinkedIn">
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <div className="footer-links">
+            <div className="footer-column">
+              <h3>Product</h3>
+              <a href="#home">Home</a>
+              <a href="#technologies">Technologies</a>
+              <a href="#projects">Projects</a>
+            </div>
+
+            <div className="footer-column">
+              <h3>Company</h3>
+              <a href="#about">About</a>
+              <a href="#contact">Contact</a>
+              <a href="#">Careers</a>
+            </div>
+
+            <div className="footer-column">
+              <h3>Legal</h3>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <p>© 2026 Dev Stack. All rights reserved.</p>
+
+          <div className="footer-bottom-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+          </div>
+        </div>
+      </footer>
+
       <ToastContainer position="bottom-right" />
     </>
   )
