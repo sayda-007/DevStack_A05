@@ -253,6 +253,38 @@ nav {
   line-height: 1.4;
 }
 
+.stack-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stack-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--light-bg);
+  border-radius: 10px;
+}
+
+.stack-item img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.stack-item h4 {
+  margin: 0;
+  color: var(--slate-dark);
+  font-size: 14px;
+}
+
+.stack-item span {
+  color: var(--slate-gray);
+  font-size: 12px;
+}
+
 .technology-card {
   background: var(--white);
   border: 1px solid var(--light-bg);
@@ -361,4 +393,10 @@ nav {
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
+}
+
+.add-stack-button:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
 }

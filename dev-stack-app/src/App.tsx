@@ -1,9 +1,9 @@
 import logo from './assets/logo-text.png'
 import bannerImage from './assets/banner-stack.png'
 import technologiesData from './data/technologies.json'
-import type {Technology} from './types'
-import {useState} from 'react'
-import {ToastContainer, toast} from 'react-toastify'
+import type { Technology } from './types'
+import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
 
@@ -16,9 +16,34 @@ function App() {
   const [stack, setStack] = useState<Technology[]>([])
 
   const addToStack = (technology: Technology) => {
-    setStack([...stack, technology])
+    const alreadyAdded = stack.some((item) => item.id === technology.id)
+
+    if (alreadyAdded) {
+      toast.warning(`${technology.name} is already in your stack!`)
+      return
+    }
+
+    setStack((prevStack) => [...prevStack, technology])
     toast.success(`${technology.name} added to your stack!`)
   }
+
+  const removeFromStack = (technologyId: string) => {
+    const technology = stack.find((item) => item.id === technologyId)
+
+    setStack((prevStack) =>
+      prevStack.filter((item) => item.id !== technologyId)
+    )
+
+    if (technology) {
+      toast.success(`${technology.name} removed from your stack!`)
+    }
+  }
+
+  const removeAllFromStack = () => {
+    setStack([])
+    toast.success('All technologies removed from your stack!')
+  }
+
 
 
   return (
@@ -144,27 +169,72 @@ function App() {
                       type="button"
                       className="add-stack-button"
                       onClick={() => addToStack(technology)}
+                      disabled={stack.some((item) => item.id === technology.id)}
                     >
-                      Add to Stack
+                      {stack.some((item) => item.id === technology.id)
+                        ? '✓ Added to Stack'
+                        : 'Add to Stack'}
                     </button>
                   </div>
                 ))}
               </div>
 
               <aside className="stack-panel">
+
                 <div className="stack-header">
                   <h3>Your Stack</h3>
-                  <span>No technologies selected yet.</span>
+                  <span>
+                    {stack.length === 0
+                      ? 'No technologies selected yet.'
+                      : `${stack.length} Technology Selected`}
+                  </span>
                 </div>
 
-                <div className="stack-empty">
-                  <p>Your stack is empty.</p>
-                </div>
+                {stack.length === 0 ? (
+                  <div className="stack-empty">
+                    <p>Your stack is empty.</p>
+                  </div>
+                ) : (
+                  <>
+                    <div className="stack-items">
+                      {stack.map((technology) => (
+                        <div className="stack-item" key={technology.id}>
+                          <img src={technology.icon} alt={technology.name} />
+
+                          <div className="stack-item-info">
+                            <h4>{technology.name}</h4>
+                            <span>{technology.category}</span>
+                          </div>
+
+                          <button
+                            type="button"
+                            className="remove-stack-button"
+                            onClick={() => removeFromStack(technology.id)}
+                            aria-label={`Remove ${technology.name}`}
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+
+                    {stack.length > 0 && (
+                      <button
+                        type="button"
+                        className="remove-all-button"
+                        onClick={removeAllFromStack}
+                      >
+                        Remove All
+                      </button>
+                    )}
+                  </>
+                )}
               </aside>
             </div>
           </div>
         </section>
       </main>
+
       <ToastContainer position="bottom-right" />
     </>
   )
