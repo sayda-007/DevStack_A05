@@ -244,6 +244,12 @@ nav {
   color: var(--slate-gray);
 }
 
+.stack-empty p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
 .technology-card {
   background: var(--white);
   border: 1px solid var(--light-bg);
