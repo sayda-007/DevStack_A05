@@ -1,8 +1,15 @@
 import logo from './assets/logo-text.png'
 import bannerImage from './assets/banner-stack.png'
+import technologiesData from './data/technologies.json'
+import type { Technology } from './types'
 import './App.css'
 
+
+
+
 function App() {
+  const technologies: Technology[] = technologiesData
+
   return (
     <>
       <header className="navbar">
@@ -36,6 +43,8 @@ function App() {
       </header>
 
       <main>
+
+        {/* Home Section */}
         <section id="home" className="hero">
           <div className="hero-content">
             <div className="hero-text">
@@ -66,6 +75,58 @@ function App() {
                 alt="Developer technologies illustration"
               />
             </div>
+          </div>
+        </section>
+
+
+        {/* Technologies Section */}
+        {/* Technologies Section */}
+        <section id="technologies" className="technologies">
+          <h2>Explore Technologies</h2>
+
+          <div className="technology-grid">
+            {technologies.map((technology) => (
+              <div className="technology-card" key={technology.id}>
+                <img src={technology.icon} alt={technology.name} />
+
+                <span
+                  className="technology-badge"
+                  style={{
+                    backgroundColor: technology.badgeBg,
+                    color: technology.badgeColor,
+                  }}
+                >
+                  {technology.badge}
+                </span>
+
+                <div className="card-content">
+                  <h3>{technology.name}</h3>
+
+                  <p className="technology-description">
+                    {technology.description}
+                  </p>
+                </div>
+
+                <div className="card-meta">
+                  <span className="category-pill">
+                    {technology.category}
+                  </span>
+
+                  <span className="difficulty">
+                    {technology.difficulty}
+                  </span>
+
+                  <span className="rating">
+                    <span className="rating-star">★</span>
+                    {technology.rating}
+                  </span>
+                </div>
+
+                <button type="button" className="add-stack-button">
+                  Add to Stack
+                </button>
+              </div>
+            ))}
           </div>
         </section>
       </main>
