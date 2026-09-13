@@ -4,13 +4,10 @@
 
 Dev Stack is a responsive React app location that helps developers explore modern technologies and build a personalized development stack.
 
-🌐 Live Project
 
-🔗 ![View Live Page](https://devstack-a05-007.netlify.app/)
+🌐 [**Visit Website →**](https://devstack-a05-007.netlify.app/)
 
-📂 Repository
-
-🔗 ![View GitHub Repository](https://github.com/sayda-007/DevStack_A05)
+🚀 [**Explore the Project →**](https://devstack-a05-007.netlify.app/)
 
 ---
 
