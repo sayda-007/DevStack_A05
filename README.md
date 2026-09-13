@@ -2,13 +2,15 @@
 
 ### Build Your Ideal Development Stack
 
-Dev Stack is a responsive React application that helps developers explore modern technologies and build a personalized development stack.
+Dev Stack is a responsive React app location that helps developers explore modern technologies and build a personalized development stack.
 
-<p align="center">
-  <a href="(https://devstack-a05-007.netlify.app/)">
-    <strong>🌐 View Live Website</strong>
-  </a>
-</p>
+🌐 Live Project
+
+🔗 ![View Live Page](https://devstack-a05-007.netlify.app/)
+
+📂 Repository
+
+🔗 ![View GitHub Repository](https://github.com/sayda-007/DevStack_A05)
 
 ---
 
