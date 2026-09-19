@@ -92,7 +92,7 @@ The website is optimized for desktop and mobile screens with:
 ### 📱 Mobile
 
 <p align="center">
-  <img src="./assets/mobile.JPG" alt="Dev Stack Mobile Preview" width="200">
+  <img src="./assets/mobileview.JPG" alt="Dev Stack Mobile Preview" width="200">
 </p>
 
 ---
