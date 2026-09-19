@@ -80,19 +80,19 @@ The website is optimized for desktop and mobile screens with:
 ### 🖥️ Desktop
 
 <p align="center">
-  <img src="./assets/desktop.JPG" alt="Dev Stack Desktop Preview" width="900">
+  <img src="./assets/desktop.JPG" alt="Dev Stack Desktop Preview" width="400">
 </p>
 
 ### 🧩 Technologies & Stack
 
 <p align="center">
-  <img src="./assets/technologies.JPG" alt="Dev Stack Technologies Preview" width="900">
+  <img src="./assets/technologies.JPG" alt="Dev Stack Technologies Preview" width="400">
 </p>
 
 ### 📱 Mobile
 
 <p align="center">
-  <img src="./assets/mobile.JPG" alt="Dev Stack Mobile Preview" width="400">
+  <img src="./assets/mobile.JPG" alt="Dev Stack Mobile Preview" width="200">
 </p>
 
 ---
