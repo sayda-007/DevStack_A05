@@ -109,7 +109,7 @@ The website is optimized for desktop and mobile screens with:
 ### 📱 Mobile
 
 <p align="center">
-  <img src="./assets/mobileview.JPG" alt="Dev Stack Mobile Preview" width="200">
+  <img src="./assets/mobileview.JPG" alt="Dev Stack Mobile Preview" width="150">
 </p>
 
 </td>
@@ -197,7 +197,6 @@ B14-A05-DevStack/
 ## 💡 What I Learned
 
 Building Dev Stack gave me practical experience with React state management, TypeScript, JSON-based data, conditional rendering, event handling, responsive CSS, and interactive UI design.
-
 The project also helped me understand how multiple React concepts can work together to create a complete, functional application.
 
 ---
