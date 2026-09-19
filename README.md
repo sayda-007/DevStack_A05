@@ -78,19 +78,33 @@ The website is optimized for desktop and mobile screens with:
 ## 🖼️ Project Preview
 
 <table>
-<td>
-  
+<tr>
+
+<td width="50%" valign="top">
+
 ### 🖥️ Desktop
 
 <p align="center">
   <img src="./assets/desktop.JPG" alt="Dev Stack Desktop Preview" width="400">
 </p>
 
+</td>
+
+<td width="50%" valign="top">
+
 ### 🧩 Technologies & Stack
 
 <p align="center">
   <img src="./assets/technologies.JPG" alt="Dev Stack Technologies Preview" width="400">
 </p>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="2" valign="top">
 
 ### 📱 Mobile
 
@@ -99,6 +113,9 @@ The website is optimized for desktop and mobile screens with:
 </p>
 
 </td>
+
+</tr>
+
 </table>
 
 ---
