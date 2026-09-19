@@ -77,6 +77,9 @@ The website is optimized for desktop and mobile screens with:
 
 ## 🖼️ Project Preview
 
+<table>
+<td>
+  
 ### 🖥️ Desktop
 
 <p align="center">
@@ -94,6 +97,9 @@ The website is optimized for desktop and mobile screens with:
 <p align="center">
   <img src="./assets/mobileview.JPG" alt="Dev Stack Mobile Preview" width="200">
 </p>
+
+</td>
+</table>
 
 ---
 
